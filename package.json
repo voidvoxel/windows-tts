@@ -1,6 +1,6 @@
 {
   "name": "@voidvoxel/windows-tts",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.4",
   "description": "Windows Speech Synthesizer provided as a JavaScript library 💖",
   "main": "src/index.js",
   "bin": {
@@ -10,8 +10,9 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "pkg bin/tts.js -t node14-win-x64 -o dist/tts.exe",
+    "build": "pkg bin/tts.js -t node14-win-x64 -o dist/bin/tts.exe",
     "postbuild": "node scripts/postbuild.js",
+    "preinstall": "npm run build && node scripts/preinstall.js",
     "test": "node tests/hello-world.test.js"
   },
   "keywords": [],
