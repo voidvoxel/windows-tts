@@ -1,0 +1,18 @@
+{
+  "name": "@voidvoxel/windows-speech",
+  "version": "1.0.0-alpha",
+  "description": "Windows Speech Synthesizer provided as a JavaScript library 💖",
+  "main": "index.js",
+  "bin": {
+    "windows-speech": "bin/windows-speech.js"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node tests/hello-world.test.js"
+  },
+  "keywords": [],
+  "author": "Ashlynn \"Void Voxel\" Juniper",
+  "license": "MPL-2.0"
+}
