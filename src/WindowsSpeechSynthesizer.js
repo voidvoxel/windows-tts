@@ -37,39 +37,7 @@ class WindowsSpeechSynthesizer {
      * @returns {string}
      */
     static encodeMessage (message) {
-        return encodeURIComponent(message)
-            .replaceAll(
-                encodeURIComponent('.'),
-                '.'
-            )
-            .replaceAll(
-                encodeURIComponent('!'),
-                '!'
-            )
-            .replaceAll(
-                encodeURIComponent('?'),
-                '?'
-            )
-            .replaceAll(
-                encodeURIComponent(','),
-                ','
-            )
-            .replaceAll(
-                encodeURIComponent(' '),
-                ' '
-            )
-            .replaceAll(
-                encodeURIComponent('\''),
-                '\''
-            )
-            .replaceAll(
-                encodeURIComponent('"'),
-                '\\"'
-            )
-            .replaceAll(
-                encodeURIComponent('_'),
-                ' '
-            );
+        return encodeURIComponent(message);
     }
 
     /**
