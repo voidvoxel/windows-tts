@@ -22,6 +22,46 @@ const CWD = path.resolve(
 
 
 /**
+ * URI-encode a message.
+ *
+ * @private
+ * @since v1.0.0-alpha.4
+ * @version
+ *
+ * @param {string} message
+ * The message to encode.
+ * @returns {string}
+ */
+function encodeMessage (message) {
+    return encodeURIComponent(message)
+        .replaceAll(
+            encodeURIComponent('.'),
+            '.'
+        )
+        .replaceAll(
+            encodeURIComponent('!'),
+            '!'
+        )
+        .replaceAll(
+            encodeURIComponent('?'),
+            '?'
+        ).replaceAll(
+            encodeURIComponent(','),
+            ','
+        ).replaceAll(
+            encodeURIComponent(' '),
+            ' '
+        ).replaceAll(
+            encodeURIComponent('\''),
+            '\''
+        ).replaceAll(
+            encodeURIComponent('"'),
+            '\\"'
+        );
+}
+
+
+/**
  * The Windows Speech Synthesizer.
  */
 class WindowsSpeechSynthesizer {
@@ -37,6 +77,8 @@ class WindowsSpeechSynthesizer {
      * @returns {Promise<void>}
      */
     async speak (message) {
+        message = encodeMessage(message);
+
         const command = `tts "${message}"`;
 
         await exec(
@@ -60,6 +102,8 @@ class WindowsSpeechSynthesizer {
      * @return {void}
      */
     speakSync (message) {
+        message = encodeMessage(message);
+
         const command = `tts "${message}"`;
 
         execSync(
