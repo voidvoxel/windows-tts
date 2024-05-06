@@ -16,7 +16,7 @@
     "test": "node tests/hello-world.test.js"
   },
   "keywords": [],
-  "author": "Ashlynn \"Void Voxel\" Juniper",
+  "author": "Ashlynne Juniper",
   "license": "MPL-2.0",
   "devDependencies": {
     "pkg": "^5.8.1"
