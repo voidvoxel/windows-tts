@@ -29,7 +29,7 @@ class WindowsSpeechSynthesizer {
      * Speak a message.
      *
      * @public
-     * @since v1.0.0-alpha.4
+     * @since v1.0.0-alpha
      * @version 1.0.0-alpha
      *
      * @param {string} message
@@ -52,11 +52,12 @@ class WindowsSpeechSynthesizer {
      * Speak a message.
      *
      * @public
-     * @since v1.0.0-alpha.4
+     * @since v1.0.0-alpha
      * @version 1.0.0-alpha
      *
      * @param {string} message
      * The message to speak.
+     * @return {void}
      */
     speakSync (message) {
         const command = `tts "${message}"`;
