@@ -49,18 +49,26 @@ class WindowsSpeechSynthesizer {
             .replaceAll(
                 encodeURIComponent('?'),
                 '?'
-            ).replaceAll(
+            )
+            .replaceAll(
                 encodeURIComponent(','),
                 ','
-            ).replaceAll(
+            )
+            .replaceAll(
                 encodeURIComponent(' '),
                 ' '
-            ).replaceAll(
+            )
+            .replaceAll(
                 encodeURIComponent('\''),
                 '\''
-            ).replaceAll(
+            )
+            .replaceAll(
                 encodeURIComponent('"'),
                 '\\"'
+            )
+            .replaceAll(
+                encodeURIComponent('_'),
+                ' '
             );
     }
 
