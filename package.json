@@ -1,6 +1,6 @@
 {
   "name": "@voidvoxel/windows-tts",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "description": "Windows Speech Synthesizer provided as a JavaScript library 💖",
   "main": "src/index.js",
   "bin": {
