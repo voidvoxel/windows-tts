@@ -1,8 +1,17 @@
 const { exec, execSync } = require('child_process');
-const appdir = require('./appdir');
 const path = require('path');
 
-const cwd = path.resolve(
+
+/**
+ * The current working directory of `WindowsSpeechSynthesizer` subprocesses.
+ *
+ * @private
+ * @since v1.0.0-alpha.4
+ * @version 1.0.0-alpha
+ *
+ * @type {string}}
+ */
+const CWD = path.resolve(
     path.join(
         __dirname,
         "..",
@@ -11,28 +20,55 @@ const cwd = path.resolve(
     )
 );
 
+
+/**
+ * The Windows Speech Synthesizer.
+ */
 class WindowsSpeechSynthesizer {
+    /**
+     * Speak a message.
+     *
+     * @public
+     * @since v1.0.0-alpha.4
+     * @version 1.0.0-alpha
+     *
+     * @param {string} message
+     * The message to speak.
+     * @returns {Promise<void>}
+     */
     async speak (message) {
         const command = `tts "${message}"`;
 
         await exec(
             command,
             {
-                cwd
+                cwd: CWD
             }
         );
     }
 
+
+    /**
+     * Speak a message.
+     *
+     * @public
+     * @since v1.0.0-alpha.4
+     * @version 1.0.0-alpha
+     *
+     * @param {string} message
+     * The message to speak.
+     */
     speakSync (message) {
         const command = `tts "${message}"`;
 
         execSync(
             command,
             {
-                cwd
+                cwd: CWD
             }
         );
     }
 }
+
 
 module.exports = WindowsSpeechSynthesizer;
